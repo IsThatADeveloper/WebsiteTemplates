@@ -1,0 +1,386 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% set image_one = url_for('static', filename='images/toothbackground.png') %}
+{% set decorative_element = url_for('static', filename='images/toothbackground.png') %}
+
+{% set responsive_element = url_for('static', filename='images/tooth2.png') %}
+{% set implant_element = url_for('static', filename='images/implant.png') %}
+
+<style>
+    .computer-responsive, .phone-responsive {
+        display: flex;
+        justify-content: center;
+    }
+
+    .treatments {
+        width: 100%;
+        max-width: 80%;
+    }
+
+    .treatment-header {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5%;
+        padding-top: 5%;
+    }
+
+    .card-text,
+    .card-text-p {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .card-text {
+        padding: 40% 5% 5% 5%;
+    }
+
+    .card-text-p {
+        padding: 0 5% 5% 5%;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .card {
+        width: 220px;
+        height: 300px;
+        border-radius: 30px;
+        box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+        transition: box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-left {
+        background-color: #e0e0e0;
+    }
+
+    .card-middle {
+        background-color: #e0e0e0;
+    }
+
+    .card-right {
+        background-color: #e0e0e0;
+    }
+
+    .card:hover {
+        cursor: pointer;
+        box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff, inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .decorative-element {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: auto;
+        opacity: 0.8;
+    }
+
+    .tooth-image-right {
+        position: absolute;
+        bottom: -100%;
+        right: -100%;
+        transition: bottom 0.8s ease, right 0.8s ease;
+        opacity: 0.25;
+    }
+
+    .card:hover .tooth-image-right {
+        bottom: 0px;
+        right: -30px;
+        opacity: 0.25;
+    }
+
+    .tooth-image-middle-left {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        transition: bottom 0.8s ease, left 0.8s ease;
+        opacity: 0.25;
+    }
+
+    .card:hover .tooth-image-middle-left {
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.25;
+    }
+
+    .tooth-image-middle-right {
+        position: absolute;
+        bottom: -100%;
+        right: 0;
+        transition: bottom 0.8s ease, right 0.8s ease;
+        opacity: 0.25;
+    }
+
+    .card:hover .tooth-image-middle-right {
+        bottom: 0px;
+        right: 0px;
+        opacity: 0.25;
+    }
+
+    .tooth-image-left {
+        position: absolute;
+        bottom: -100%;
+        left: -100%;
+        transition: bottom 0.8s ease, left 0.8s ease;
+        opacity: 0.25;
+    }
+
+    .card:hover .tooth-image-left {
+        bottom: 0px;
+        left: -22px;
+        opacity: 0.25;
+    }
+
+    .computer-responsive {
+        visibility: visible;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .phone-responsive {
+        visibility: hidden;
+        display: none;
+    }
+
+    /* Responsive Section */
+    @media (max-width: 1200px) {
+        .treatments {
+            width: 100%;
+            max-width: 90%;
+        }
+
+        .card {
+            width: 160px;
+            height: 220px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        .computer-responsive {
+            visibility: visible;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .phone-responsive {
+            visibility: hidden;
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .small-card {
+            width: 100%;
+            height: 60vh;
+            background-color: e0e0e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        .screen {
+            width: 100%;
+        }
+
+        .res-header {
+            display: flex;
+            justify-content: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        .res-slogen {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 5%;
+        }
+
+        .responsive-element {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: auto;
+            opacity: 1;
+        }
+
+        .small-card-t {
+            display: flex;
+            justify-content: center;
+        }
+
+        .small-card-p {
+            display: flex;
+            justify-content: center;
+        }
+
+        .computer-responsive {
+            visibility: hidden;
+            display: none;
+        }
+
+        .phone-responsive {
+            height: auto;
+            width: 100%;
+            visibility: visible;
+            display: flex;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .small-card {
+            width: 100%;
+            height: 60vh;
+            background-color: e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        .screen {
+            width: 100%;
+        }
+
+        .res-header {
+            display: flex;
+            justify-content: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        .res-slogen {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 5%;
+        }
+
+        .computer-responsive {
+            visibility: hidden;
+            display: none;
+        }
+
+        .phone-responsive {
+            height: auto;
+            width: 100%;
+            visibility: visible;
+            display: flex;
+        }
+    }
+</style>
+
+<section class="computer-responsive">
+    <div class="treatments">
+        <div class="treatment-header">
+            <h1>Our Treatments</h1>
+        </div>
+
+        <div class="card-container">
+            <div class="card card-left">
+                <img src="{{ decorative_element }}" alt="Decorative Element" class="decorative-element">
+                <div class="card-text">
+                    <h3>Teeth Whitening</h3>
+                </div>
+                <div class="card-text-p">
+                    <p>Remove stains for a brighter smile. Book today!</p>
+                </div>
+                <img src="{{ image_one }}" alt="Tooth" class="tooth-image-right">
+            </div>
+            <div class="card card-middle">
+                <img src="{{ implant_element }}" alt="Implant Element" class="decorative-element">
+                <div class="card-text">
+                    <h3>Dental Implants</h3>
+                </div>
+                <div class="card-text-p">
+                    <p>Restore your smile with natural-looking implants. Schedule now!</p>
+                </div>
+                <img src="{{ image_one }}" alt="Tooth" class="tooth-image-middle-left">
+            </div>
+            <div class="card card-middle">
+                <img src="{{ decorative_element }}" alt="Decorative Element" class="decorative-element">
+                <div class="card-text">
+                    <h3>Invisalign</h3>
+                </div>
+                <div class="card-text-p">
+                    <p>Straighten your teeth discreetly. Start today!</p>
+                </div>
+                <img src="{{ image_one }}" alt="Tooth" class="tooth-image-middle-right">
+            </div>
+            <div class="card card-right">
+                <img src="{{ decorative_element }}" alt="Decorative Element" class="decorative-element">
+                <div class="card-text">
+                    <h3>Dental Cleanings</h3>
+                </div>
+                <div class="card-text-p">
+                    <p>Maintain a healthy smile with regular cleanings. Book now!</p>
+                </div>
+                <img src="{{ image_one }}" alt="Tooth" class="tooth-image-left">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="phone-responsive">
+    <div class="screen">
+        <div class="res-header">
+            <h1>Our Treatments</h1>
+        </div>
+        <div class="res-slogen">
+            <p>slogen ...</p>
+        </div>
+
+        <div class="small-card">
+            <div class="small-card-t">
+                <h3>Teeth Whitening</h3>
+            </div>
+            <img src="{{ responsive_element }}" alt="Responsive Element" class="responsive-element">
+            <div class="small-card-p">
+                <p>Remove stains for a brighter smile. Book today!</p>
+            </div>
+        </div>
+
+        <div class="small-card">
+            <div class="small-card-t">
+                <h3>Dental Implants</h3>
+            </div>
+            <img src="{{ implant_element }}" alt="Implant Element" class="responsive-element">
+            <div class="small-card-p">
+                <p>Restore your smile with natural-looking implants. Schedule now!</p>
+            </div>
+        </div>
+
+        <div class="small-card">
+            <div class="small-card-t">
+                <h3>Invisalign</h3>
+            </div>
+            <img src="{{ responsive_element }}" alt="Responsive Element" class="responsive-element">
+            <div class="small-card-p">
+                <p>Straighten your teeth discreetly. Start today!</p>
+            </div>
+        </div>
+
+        <div class="small-card">
+            <div class="small-card-t">
+                <h3>Dental Cleanings</h3>
+            </div>
+            <img src="{{ responsive_element }}" alt="Responsive Element" class="responsive-element">
+            <div class="small-card-p">
+                <p>Maintain a healthy smile with regular cleanings. Book now!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

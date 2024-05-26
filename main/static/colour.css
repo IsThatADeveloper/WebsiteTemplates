@@ -1,0 +1,14 @@
+:root {
+    --body-bg: white;
+    --header-bg: #e0e0e0;
+    --main-border-cl: black;
+    --hover-underline-cl: grey;
+
+    --body-txt: black;
+    --header-txt: black;
+    --div-txt: black;
+    --p-txt: black;
+    --h1-txt: black;
+    --h2-txt: grey;
+    --h3-txt: blue;
+}

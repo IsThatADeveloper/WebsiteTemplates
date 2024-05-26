@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: lightgrey;
+        font-family: sans-serif;
+        /* ensure a consistent font across devices */
+    }
+
+    div {
+        font-size: 0.8em;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .header {
+        display: flex;
+        height: 100%;
+    }
+
+    .layout {
+        /* Remove fixed width */
+        width: 22%;
+        height: 100%;
+        /* Adjust as needed */
+        display: grid;
+        grid-template-rows: repeat(6, 8%);
+        grid-template-columns: 100%;
+        grid-auto-flow: column dense;
+        justify-items: left;
+        padding-left: 3%;
+        align-items: center;
+        word-wrap: break-word;
+
+        background-color: lightpink;
+        padding-top: 5%;
+    }
+
+    .layout2 {
+        height: 10%;
+        width: 78%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        background-color: white;
+    }
+
+    .dashboard {
+        margin-right: 25%
+    }
+
+    .hovereffect {
+        display: inline-block;
+        position: relative;
+        color: var(--div-txt);
+    }
+
+    .hovereffect::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--hover-underline-cl);
+        transform-origin: bottom right;
+        transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    .hovereffect:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .fi {
+        padding: 10px;
+    }
+</style>
+
+<content class="header">
+
+    <section class="layout">
+        <div><a class="hovereffect" href="/home">Web Logo</a></div>
+        <div><i class="fi fi-rr-home"></i><a class="hovereffect" href="/home">Home</a></div>
+        <div><i class="fi fi-rr-info"></i><a class="hovereffect" href="/about">About</a></div>
+        <div><i class="fi fi-rr-headset"></i><a class="hovereffect" href="/contact">Contact</a></div>
+        <div><i class="fi fi-rr-chart-histogram"></i><a class="hovereffect" href="/test">MyFinances</a></div>
+        <div><a class="hovereffect" href="/test">Test</a></div>
+        
+    </section>
+
+    <section class="layout2">
+        <div class="dashboard"><a class="hovereffect" href="/contact">Dashboard</a></div>
+
+        <div class="social">
+            <a class="hovereffect" href="/instagram.com">Instagram</a>
+            <a class="hovereffect" href="/linkedin.com">Linkedin</a>
+        </div>
+
+    </section>
+
+</content>
+
+
+{% endblock content %}

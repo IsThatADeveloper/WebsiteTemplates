@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: blue;
+    }
+
+    .contact-section {
+        display: flex;
+        justify-content: center;
+        padding: 2%;
+        width: 100%;
+        height: auto;
+        background-color: beige;
+    }
+
+    .appointment-section,
+    .contact-section {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
+
+        padding: 1.5% 0 1.5% 0;
+        background: radial-gradient(rgba(134, 134, 134, 0.5) 0.45px, transparent 0.45px),
+            radial-gradient(rgba(134, 134, 134, 0.5) 0.45px, rgba(255, 255, 255, 0.5) 0.45px);
+
+        background-size: 18px 18px;
+        background-position: 0 0, 9px 9px;
+        opacity: 1;
+        position: relative;
+    }
+
+    .appointment-button {
+        padding: 9.5px 24px;
+        border: 0;
+        border-radius: 100px;
+        background-color: #2ba8fb;
+        color: #ffffff;
+        font-weight: Bold;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+    }
+
+    .appointment-button:hover {
+        background-color: #6fc5ff;
+        box-shadow: 0 0 20px #6fc5ff50;
+        transform: scale(1.1);
+    }
+
+    .appointment-button:active {
+        background-color: #3d94cf;
+        transition: all 0.25s;
+        -webkit-transition: all 0.25s;
+        box-shadow: none;
+        transform: scale(0.98);
+    }
+
+    .appointment-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+<body>
+
+
+    <section class="appointment-section">
+        <div class="appointment-center">
+            <h3>Book an Appointment</h3>
+            <button class="appointment-button">Book</button>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div>
+            <h3>CONTACT US AT (000)-000-0000</h3>
+        </div>
+    </section>
+
+</body>
+
+{% endblock content %}

@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+    .appointment-page {
+        display: flex;
+        justify-content: center;
+        padding: 5% 0;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 350px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        border: 2px solid #000;
+    }
+
+    .title {
+        font-size: 28px;
+        color: royalblue;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        position: relative;
+    }
+
+    .title::before,
+    .title::after {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 0;
+        background-color: royalblue;
+    }
+
+    .title::before {
+        width: 18px;
+        height: 18px;
+    }
+
+    .title::after {
+        width: 18px;
+        height: 18px;
+        animation: pulse 1s linear infinite;
+    }
+
+    .message,
+    .signin {
+        color: rgba(88, 87, 87, 0.822);
+        font-size: 14px;
+    }
+
+    .signin {
+        text-align: center;
+    }
+
+    .signin a {
+        color: royalblue;
+    }
+
+    .signin a:hover {
+        text-decoration: underline;
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .form label {
+        position: relative;
+    }
+
+    .input {
+        width: 100%;
+        padding: 10px 10px 20px;
+        outline: 0;
+        border: 1px solid rgba(105, 105, 105, 0.397);
+        border-radius: 10px;
+    }
+
+    .form label span {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        color: grey;
+        font-size: 0.9em;
+        cursor: text;
+        transition: 0.3s ease;
+    }
+
+    .input:placeholder-shown+span {
+        top: 15px;
+        font-size: 0.9em;
+    }
+
+    .input:focus+span,
+    .input:valid+span {
+        top: -10px;
+        font-size: 0.8em;
+        font-weight: 600;
+        background: white;
+        padding: 0 5px;
+    }
+
+    .input:valid+span {
+        color: green;
+    }
+
+    .submit {
+        border: none;
+        background-color: royalblue;
+        padding: 10px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit:hover {
+        background-color: rgb(56, 90, 194);
+    }
+
+    @keyframes pulse {
+        from {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+        to {
+            transform: scale(1.8);
+            opacity: 0;
+        }
+    }
+</style>
+
+<section class="appointment-page">
+    <form class="form" method="post" action="/">
+        <p class="title">Schedule Your Dental Appointment</p>
+        <p class="message">Please fill out the form below to book your appointment with us.</p>
+        <div class="flex">
+            <label>
+                <input required type="text" class="input"  id="firstname" name="firstname">
+                <span>First name</span>
+            </label>
+            <label>
+                <input required type="text" class="input" id="lastname" name="lastname">
+                <span>Last name</span>
+            </label>
+        </div>
+
+        <label>
+            <input required type="email" class="input" id="email" name="email">
+            <span>Email</span>
+        </label>
+
+        <label>
+            <select required class="input" name="service">
+                <option value="" disabled selected></option>
+                <option value="cleaning">Cleaning</option>
+                <option value="whitening">Whitening</option>
+                <option value="extraction">Extraction</option>
+                <option value="filling">Filling</option>
+            </select>
+            <span>Select a service</span>
+        </label>
+
+        <label for="datetime">
+            <input required type="datetime-local" class="input datetime-input" id="datetime"
+                placeholder="" name="datetime">
+            <span>Appointment date and time</span>
+        </label>
+
+        <button class="submit">Book Appointment</button>
+    </form>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const datetimeInput = document.getElementById('datetime');
+
+        datetimeInput.addEventListener('focus', function () {
+            if (this.type === 'text') {
+                this.type = 'datetime-local';
+            }
+        });
+
+        datetimeInput.addEventListener('blur', function () {
+            if (!this.value) {
+                this.type = 'text';
+                this.placeholder = '';
+            }
+        });
+
+        datetimeInput.type = 'text';  // Initialize the input as text
+        datetimeInput.placeholder = '';  // Set initial placeholder
+    });
+</script>
+
+{% endblock content %}

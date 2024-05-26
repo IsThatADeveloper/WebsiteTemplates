@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+
+body {
+    background-color: var(--body-bg); 
+    color: var(--body-txt); 
+}
+
+header {
+    background-color: var(--header-bg);
+    margin-top: 1%;
+    border-top: 2px solid var(--main-border-cl);
+    color: var(--header-txt);
+}
+
+div, .title  {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: var(--div-txt);
+}
+
+a {
+    text-decoration: none;
+}
+
+.layout {
+    width: 60%;
+    display: grid;
+    text-align: center;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.left-div, .center-div {
+    border-right: 2px solid var(--main-border-cl); /*TOP RIGHT BOTTOM LEFT */
+}
+
+.center-div, .right-div {
+    border-left: 2px solid var(--main-border-cl);
+}
+
+.title, .nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
+    border-top: 2px solid var(--main-border-cl);
+}
+
+.hovereffect {
+    display: inline-block;
+    position: relative;
+    color: var(--div-txt);
+}
+
+.hovereffect::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--hover-underline-cl);
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.hovereffect:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+    
+</style>
+
+<header>
+
+        <h1 class="title">Trading Portfolio</h1>
+
+        <nav class="nav-container">
+            <section class="layout">
+                <div class="right-div"><a class="hovereffect" href="/home">Home</a></div>
+                <div class="center-div"><a class="hovereffect" href="/about">About</a></div>
+                <div class="left-div"><a class="hovereffect" href="/contact">Contact</a></div>
+                <div class="left-div"><a class="hovereffect" href="/test">Test</a></div>
+            </section>
+        </nav>
+
+</header>
+
+<div class="intro">
+    <div class="intro-text">
+        <h1 class="hide">
+            <span class="text">Creating inovation</span>
+        </h1>
+        <h1 class="hide">
+            <span class="text">For Everyday</span>
+        </h1>
+        <h1 class="hide">
+            <span class="text">people.</span>
+        </h1>
+    </div>
+</div>
+<div class="slider"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+    integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+    crossorigin="anonymous"></script>
+
+<script>
+    const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+
+    tl.to(".text", { y: "0%", duration: 1, stagger: 0.25 });
+    tl.to(".slider", { y: "-100%", duration: 1.5, delay: 0.5 });
+    tl.to(".intro", { y: "-100%", duration: 1 }, "-=1");
+    tl.fromTo("nav", { opacity: 0 }, { opacity: 1, duration: 1 });
+    tl.fromTo(".big-text", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
+</script>
+
+{% endblock content %}
