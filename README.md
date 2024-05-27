@@ -18,6 +18,13 @@ Templates for my websites, links and documentation of my learning
 # Documentation Webdesign
 - [Gomila Front End Designs](https://www.gomila.co/web-design)
 - [Background Patterns](https://www.magicpattern.design/tools/css-backgrounds)
+- [Grid Builder](https://layout.bradwoods.io/customize)
+- [Tailwind Doc](https://tailwindcss.com/docs/place-content)
+- [React Doc](https://react.dev/learn)
+- [Bootstrap Doc](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Colour Palette Builder](https://coolors.co/d7d0c8-c8c6af-95a78d-bd897e-f87666)
+- [GIT Styling](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [Animation Generator](https://webcode.tools/structured-data-generator/video)
 
 # Weblinks
 ## Images and Symbols
