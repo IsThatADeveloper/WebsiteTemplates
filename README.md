@@ -35,6 +35,10 @@ Templates for my websites, links and documentation of my learning
 - [Symbols Omatsuri](https://omatsuri.app/html-symbols)
 - [Symbols Flaticon](https://www.flaticon.com/free-icon-font/chart-histogram_5528038?related_id=5528038_)
 
+# Documentation Animations
+- [CSS Animations](https://blog.hubspot.com/website/css-animation-examples)
+- [Background Animations](https://pixabay.com/gifs/search/background/)
+
 
 # Extras
 - [Comp Sci Course (free)](https://github.com/ossu/computer-science?tab=readme-ov-file)
