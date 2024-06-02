@@ -38,7 +38,9 @@ Templates for my websites, links and documentation of my learning
 # Documentation Animations
 - [CSS Animations](https://blog.hubspot.com/website/css-animation-examples)
 - [Background Animations](https://pixabay.com/gifs/search/background/)
+- [More from pixabay](https://pixabay.com/ru/videos/fairy-forest-mushroom-house-151053/)
 - [Graphic Animated Backgrounds](https://www.videvo.net/search/?q=animated&mode=motion-graphics)
+- [Free 4K Backrgounds Aniamted](https://www.youtube.com/channel/UCv4_um5ec2qFaaQ8_rABtaQ)
 
 
 # Extras
