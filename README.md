@@ -38,6 +38,7 @@ Templates for my websites, links and documentation of my learning
 # Documentation Animations
 - [CSS Animations](https://blog.hubspot.com/website/css-animation-examples)
 - [Background Animations](https://pixabay.com/gifs/search/background/)
+- [Graphic Animated Backgrounds](https://www.videvo.net/search/?q=animated&mode=motion-graphics)
 
 
 # Extras
